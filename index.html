@@ -31,7 +31,14 @@
   ],
   "openingHoursSpecification":{"@type":"OpeningHoursSpecification",
     "dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"17:00"},
-  "sameAs":["https://www.credly.com/users/sam-johnson.27a7d453"]
+  "sameAs":["https://www.credly.com/users/sam-johnson.27a7d453"],
+  "makesOffer":[
+    {"@type":"Offer","name":"Monthly Bookkeeping, Basic","description":"Up to 50 transactions a month, one bank account reconciled, monthly Profit and Loss and Balance Sheet.","priceSpecification":{"@type":"UnitPriceSpecification","price":"250","priceCurrency":"USD","unitText":"MONTH"}},
+    {"@type":"Offer","name":"Monthly Bookkeeping, Standard","description":"Up to 150 transactions a month, multiple accounts reconciled, accounts payable and receivable.","priceSpecification":{"@type":"UnitPriceSpecification","price":"400","priceCurrency":"USD","unitText":"MONTH"}},
+    {"@type":"Offer","name":"Monthly Bookkeeping, Plus","description":"150+ transactions, multiple accounts, monthly review call.","priceSpecification":{"@type":"UnitPriceSpecification","price":"600","priceCurrency":"USD","unitText":"MONTH"}},
+    {"@type":"Offer","name":"QuickBooks cleanup and catch-up","description":"Rebuilding books that are behind or out of balance, reconciled month by month to the statements.","priceSpecification":{"@type":"UnitPriceSpecification","price":"75","priceCurrency":"USD","unitText":"HOUR"}},
+    {"@type":"Offer","name":"QuickBooks Online setup","description":"Chart of accounts, bank feeds, bank rules and invoicing set up for your business.","priceSpecification":{"@type":"UnitPriceSpecification","price":"300","priceCurrency":"USD"}}
+  ]
 }
 </script>
 
@@ -122,14 +129,37 @@ ul.check li:before{content:"";position:absolute;left:0;top:8px;width:15px;height
 .cta h2{color:#fff}
 .cta .fine{font-size:.94rem;margin-top:20px;color:#a8b8ce}
 .cta .fine a{color:#fff}
-footer{padding:32px 0;font-size:.9rem;color:#71809a;text-align:center}
+footer{padding:32px 0 0;font-size:.9rem;color:#71809a;text-align:center}
 footer a{color:#71809a}
+
+/* trust strip under the hero */
+.trust{background:var(--navy);color:#dce4ef;padding:16px 0;font-size:.95rem}
+.trust .wrap{display:flex;flex-wrap:wrap;gap:10px 30px;justify-content:center;text-align:center}
+.trust span{white-space:nowrap}
+.trust b{color:var(--gold)}
+
+/* what happens next, sits under the main CTAs */
+.next{border:1px dashed var(--line);border-radius:10px;padding:14px 18px;margin-top:18px;
+  font-size:.95rem;background:#fff}
+.next b{color:var(--ink)}
+
+/* sticky mobile call bar */
+.stick{display:none}
+@media(max-width:760px){
+  .stick{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:99;
+    box-shadow:0 -4px 18px rgba(15,39,71,.18)}
+  .stick a{flex:1;text-align:center;padding:16px 8px;font-weight:700;text-decoration:none;font-size:1.02rem}
+  .stick .s-call{background:var(--gold);color:var(--navy)}
+  .stick .s-text{background:var(--navy);color:#fff}
+  body{padding-bottom:64px}
+}
 @media(max-width:640px){
   h1{font-size:1.95rem}
   .btn{display:block;text-align:center}
   .btn.alt{margin:12px 0 0}
   .about .row{grid-template-columns:1fr}
   .about .row img{max-width:220px}
+  .trust .wrap{gap:8px 18px;font-size:.88rem}
 }
 </style>
 </head>
@@ -151,10 +181,16 @@ footer a{color:#71809a}
     <div class="anchor">From <em>$250 a month, flat</em> &middot; No contract &middot; Free 20-minute books review</div>
 
     <div class="btnrow">
-      <a class="btn" href="tel:+12056392604">Get my free books review</a>
-      <a class="btn alt" href="https://forms.gle/CuMHZsTyQNT7ib9T6" target="_blank" rel="noopener">Send me your details instead</a>
+      <a class="btn" href="tel:+12056392604">Call for a free books review</a>
+      <a class="btn alt" href="sms:+12056392604?&body=Hi%20Sam,%20I%20need%20help%20with%20my%20books.">Text me instead</a>
     </div>
     <p class="promise">I answer calls, texts and emails within one business day, usually the same day.</p>
+
+    <div class="next">
+      <b>What happens on the call:</b> you tell me what your business does and what is going wrong with the
+      books. I tell you what it would take to fix and what it would cost. No pitch deck, no pressure, and
+      you can take that answer to another bookkeeper if you want.
+    </div>
 
     <div class="badges">
       <span class="badge">Intuit Certified QuickBooks ProAdvisor</span>
@@ -162,6 +198,15 @@ footer a{color:#71809a}
       <span class="badge">Intuit Enterprise Suite Certified</span>
       <span class="badge">Insured</span>
     </div>
+  </div>
+</div>
+
+<div class="trust">
+  <div class="wrap">
+    <span><b>&#10003;</b> Never ask for your bank password</span>
+    <span><b>&#10003;</b> Flat fee, quoted in writing</span>
+    <span><b>&#10003;</b> Month to month, cancel anytime</span>
+    <span><b>&#10003;</b> Licensed LLC, insured</span>
   </div>
 </div>
 
@@ -315,9 +360,13 @@ footer a{color:#71809a}
   <div class="wrap">
     <h2>Find out what your books actually need</h2>
     <p>Twenty minutes, free, and you get a straight answer either way.</p>
-    <div class="btnrow"><a class="btn" href="tel:+12056392604">Call or text (205) 639-2604</a></div>
+    <div class="btnrow">
+      <a class="btn" href="tel:+12056392604">Call (205) 639-2604</a>
+      <a class="btn alt" href="sms:+12056392604?&body=Hi%20Sam,%20I%20need%20help%20with%20my%20books." style="background:transparent;color:#fff;border-color:#fff">Text me</a>
+    </div>
     <p class="fine">Prefer to write it down? <a href="https://forms.gle/CuMHZsTyQNT7ib9T6" target="_blank" rel="noopener">Send me your details</a>
-      or email samjohnson8580@gmail.com. I will only use it to reply to you.</p>
+      or email <a href="mailto:samjohnson8580@gmail.com?subject=Free%20books%20review">samjohnson8580@gmail.com</a>.
+      I will only use it to reply to you, and I do not sell or share anything you send.</p>
   </div>
 </div>
 
@@ -329,8 +378,14 @@ footer a{color:#71809a}
     <br><br>
     Johnson Innovation Group LLC is a bookkeeping firm. It is not a CPA firm and does not provide tax,
     audit, attest, or legal services.
+    <br><br>
   </div>
 </footer>
+
+<div class="stick">
+  <a class="s-call" href="tel:+12056392604">Call Sam</a>
+  <a class="s-text" href="sms:+12056392604?&body=Hi%20Sam,%20I%20need%20help%20with%20my%20books.">Text Sam</a>
+</div>
 
 </body>
 </html>
