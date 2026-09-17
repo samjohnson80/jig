@@ -57,238 +57,197 @@
   ]
 }
 </script>
-
-<style>
-:root{--navy:#0F2747;--gold:#C9A227;--ink:#16202f;--body:#40506a;--line:#e3e8ef;--tint:#f5f7fa}
-*{box-sizing:border-box}
-body{margin:0;background:#fff;color:var(--body);
-  font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
-img{max-width:100%}
-.wrap{max-width:980px;margin:0 auto;padding:0 20px}
-h1,h2,h3{color:var(--ink);line-height:1.22;margin:0 0 14px}
-h1{font-size:2.45rem;letter-spacing:-.6px}
-h2{font-size:1.65rem}
-a{color:var(--navy)}
-
-header{background:var(--navy);padding:22px 0}
-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
-header img{width:250px;height:auto}
-header .call{color:#fff;font-weight:600;text-decoration:none}
-header .call span{color:var(--gold)}
-
-.hero{padding:56px 0 46px}
-.hero .sub{font-size:1.24rem;max-width:660px;color:var(--ink)}
-.anchor{display:inline-block;margin:20px 0 4px;background:var(--tint);border:1px solid var(--line);
-  border-radius:10px;padding:12px 18px;font-weight:700;color:var(--ink);font-size:1.05rem}
-.anchor em{font-style:normal;color:var(--navy)}
-.btnrow{margin:24px 0 10px}
-.btn{display:inline-block;background:var(--gold);color:var(--navy);font-weight:700;text-decoration:none;
-  padding:16px 30px;border-radius:8px;font-size:1.08rem}
-.btn.alt{background:#fff;color:var(--navy);border:2px solid var(--navy);margin-left:12px}
-.promise{font-size:.95rem;margin:6px 0 0}
-.badges{display:flex;flex-wrap:wrap;gap:9px;margin:26px 0 0}
-.badge{background:var(--tint);border:1px solid var(--line);border-radius:999px;padding:7px 14px;
-  font-size:.85rem;color:var(--ink);font-weight:600}
-
-section{padding:52px 0;border-top:1px solid var(--line)}
-.tint{background:var(--tint)}
-.tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:20px;margin:26px 0 0}
-.tier{border:1px solid var(--line);border-radius:12px;padding:24px;background:#fff}
-.tier.feature{border:2px solid var(--navy);box-shadow:0 6px 24px rgba(15,39,71,.08)}
-.tier .tag{display:inline-block;background:var(--navy);color:#fff;font-size:.72rem;font-weight:700;
-  letter-spacing:.5px;padding:4px 10px;border-radius:999px;margin-bottom:10px}
-.tier h3{font-size:1.1rem;margin-bottom:6px}
-.tier .amt{color:var(--navy);font-weight:800;font-size:1.9rem;margin:12px 0 2px}
-.tier .amt small{font-size:.85rem;font-weight:600;color:var(--body)}
-.strip{margin-top:24px;border:1px solid var(--line);border-radius:10px;padding:18px 22px;background:#fff}
-.strip b{color:var(--ink)}
-.nocontract{margin-top:18px;font-weight:600;color:var(--ink)}
-
-ul.check{list-style:none;padding:0;margin:20px 0 0}
-ul.check li{padding-left:30px;position:relative;margin-bottom:12px}
-ul.check li:before{content:"";position:absolute;left:0;top:8px;width:15px;height:15px;border-radius:50%;background:var(--gold)}
-
-.steps{counter-reset:s;list-style:none;padding:0;margin:26px 0 0}
-.steps li{counter-increment:s;position:relative;padding-left:52px;margin-bottom:22px}
-.steps li:before{content:counter(s);position:absolute;left:0;top:-2px;width:34px;height:34px;background:var(--navy);
-  color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700}
-.steps strong{color:var(--ink);display:block}
-
-.faq{margin-top:24px}
-.faq details{border-bottom:1px solid var(--line);padding:16px 0}
-.faq summary{cursor:pointer;font-weight:700;color:var(--ink);font-size:1.05rem;list-style:none}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary:before{content:"+";color:var(--gold);font-weight:800;margin-right:10px}
-.faq details[open] summary:before{content:"\2013"}
-.faq p{margin:12px 0 0}
-
-.about .row{display:grid;grid-template-columns:200px 1fr;gap:30px;align-items:start;margin-top:22px}
-.about .row img{border-radius:12px;width:100%}
-.cities p{margin:0 0 14px}
-.cta{background:var(--navy);color:#cfd8e6;text-align:center;border:0}
-.cta h2{color:#fff}
-.cta .fine{font-size:.94rem;margin-top:20px;color:#a8b8ce}
-.cta .fine a{color:#fff}
-footer{padding:32px 0 0;font-size:.9rem;color:#71809a;text-align:center}
-footer a{color:#71809a}
-
-/* trust strip under the hero */
-.trust{background:var(--navy);color:#dce4ef;padding:16px 0;font-size:.95rem}
-.trust .wrap{display:flex;flex-wrap:wrap;gap:10px 30px;justify-content:center;text-align:center}
-.trust span{white-space:nowrap}
-.trust b{color:var(--gold)}
-
-/* what happens next, sits under the main CTAs */
-.next{border:1px dashed var(--line);border-radius:10px;padding:14px 18px;margin-top:18px;
-  font-size:.95rem;background:#fff}
-.next b{color:var(--ink)}
-
-/* sticky mobile call bar */
-.stick{display:none}
-@media(max-width:760px){
-  .stick{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:99;
-    box-shadow:0 -4px 18px rgba(15,39,71,.18)}
-  .stick a{flex:1;text-align:center;padding:16px 8px;font-weight:700;text-decoration:none;font-size:1.02rem}
-  .stick .s-call{background:var(--gold);color:var(--navy)}
-  .stick .s-text{background:var(--navy);color:#fff}
-  body{padding-bottom:64px}
-}
-@media(max-width:640px){
-  h1{font-size:1.95rem}
-  .btn{display:block;text-align:center}
-  .btn.alt{margin:12px 0 0}
-  .about .row{grid-template-columns:1fr}
-  .about .row img{max-width:220px}
-  .trust .wrap{gap:8px 18px;font-size:.88rem}
-}
-</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
+<header class="site-head">
   <div class="wrap">
-    <img src="JIG-logo-wide.png" width="250" height="77" alt="Johnson Innovation Group LLC">
-    <a class="call" href="tel:+12056392604">Call or text <span>(205) 639-2604</span></a>
+    <a class="brand" href="/jig/">
+      <span class="mark">JIG</span>
+      <span class="name">Johnson Innovation Group
+        <span>Bookkeeping &amp; QuickBooks</span>
+      </span>
+    </a>
+    <div class="head-call">
+      <a class="num" href="tel:+12056392604">(205) 639-2604
+        <small>Mon to Fri, 9 to 5 PT</small>
+      </a>
+      <a class="btn small" href="tel:+12056392604">Free books review</a>
+    </div>
   </div>
 </header>
 
 <div class="hero">
   <div class="wrap">
-    <h1>Clean, reconciled books. Every month.</h1>
-    <p class="sub">Flat-fee monthly bookkeeping for small businesses in Sierra Madre, Pasadena, Arcadia
-      and the San Gabriel Valley. Remote anywhere in California.</p>
+    <p class="eyebrow">Sierra Madre &middot; Pasadena &middot; San Gabriel Valley</p>
+    <h1>Clean, reconciled books.<br>Every single month.</h1>
+    <div class="rule"></div>
+    <p class="lead">Flat-fee monthly bookkeeping for small businesses and professional services firms.
+      In person across the San Gabriel Valley, remote anywhere in California.</p>
 
-    <div class="anchor">From <em>$250 a month, flat</em> &middot; No contract &middot; Free 20-minute books review</div>
+    <div class="price-anchor">
+      <span><b>From $250 a month</b>, flat</span>
+      <span class="sep">|</span>
+      <span>No contract</span>
+      <span class="sep">|</span>
+      <span>Free 20-minute books review</span>
+    </div>
 
     <div class="btnrow">
       <a class="btn" href="tel:+12056392604">Call for a free books review</a>
-      <a class="btn alt" href="sms:+12056392604?&body=Hi%20Sam,%20I%20need%20help%20with%20my%20books.">Text me instead</a>
+      <a class="btn ghost" href="sms:+12056392604?&body=Hi%20Sam,%20I%20need%20help%20with%20my%20books.">Text me instead</a>
     </div>
-    <p class="promise">I answer calls, texts and emails within one business day, usually the same day.</p>
+    <p class="after-btn">I answer calls, texts and emails within one business day, usually the same day.</p>
 
-    <div class="next">
-      <b>What happens on the call:</b> you tell me what your business does and what is going wrong with the
-      books. I tell you what it would take to fix and what it would cost. No pitch deck, no pressure, and
-      you can take that answer to another bookkeeper if you want.
-    </div>
-
-    <div class="badges">
-      <span class="badge">Intuit Certified QuickBooks ProAdvisor</span>
-      <span class="badge">QuickBooks Online Level 2</span>
-      <span class="badge">Intuit Enterprise Suite Certified</span>
-      <span class="badge">Insured</span>
+    <div class="next-box">
+      <h3>What happens on that call</h3>
+      <p>You tell me what your business does and what is going wrong with the books. I tell you what it
+        would take to fix and what it would cost. No pitch deck, no pressure, and you are welcome to take
+        that answer to another bookkeeper.</p>
     </div>
   </div>
 </div>
 
-<div class="trust">
+<div class="creds">
   <div class="wrap">
-    <span><b>&#10003;</b> Never ask for your bank password</span>
-    <span><b>&#10003;</b> Flat fee, quoted in writing</span>
-    <span><b>&#10003;</b> Month to month, cancel anytime</span>
-    <span><b>&#10003;</b> Licensed LLC, insured</span>
+    <div class="c"><b>Intuit Certified ProAdvisor</b><span>Four Intuit certifications, verifiable on Credly</span></div>
+    <div class="c"><b>Never your bank password</b><span>Accountant access inside QuickBooks, revoked in two clicks</span></div>
+    <div class="c"><b>Flat fee, in writing</b><span>Quoted before the work starts, no hourly meter</span></div>
+    <div class="c"><b>Insured LLC</b><span>Professional liability coverage in place</span></div>
   </div>
 </div>
 
 <!--
   TESTIMONIALS GO HERE once Sam has 2 or 3 real ones.
-  Research: social proof is the single biggest gap on this page, and quotes with a
-  name, business type and city (plus a photo) outperform anonymous ones.
-  Do not add anything here that a real client did not actually say.
+  Social proof is the single biggest gap on this page. Quotes with a name, business type
+  and city outperform anonymous ones. Never add anything a real client did not actually say.
 -->
-
-<section class="tint">
-  <div class="wrap">
-    <h2>Bookkeeping prices, published</h2>
-    <p>Most bookkeepers make you get on a call before they will tell you the price. Here it is.
-      Flat monthly fee, set before the month starts, so there is no hourly meter running.</p>
-
-    <div class="tiers">
-      <div class="tier">
-        <h3>Basic</h3>
-        <p>Up to 50 transactions a month. One bank account reconciled.</p>
-        <div class="amt">$250<small> / month</small></div>
-      </div>
-      <div class="tier feature">
-        <span class="tag">MOST COMMON</span>
-        <h3>Standard</h3>
-        <p>Up to 150 transactions. Multiple accounts reconciled, plus accounts payable and receivable.</p>
-        <div class="amt">$400<small> / month</small></div>
-      </div>
-      <div class="tier">
-        <h3>Plus</h3>
-        <p>150+ transactions, multiple accounts, and a monthly review call.</p>
-        <div class="amt">$600<small> / month</small></div>
-      </div>
-    </div>
-
-    <div class="strip">
-      <b>Books behind?</b> Cleanup and catch-up is <b>$75 an hour</b>.
-      <b>Starting fresh?</b> QuickBooks Online setup is <b>$300 flat</b>.
-      Both are quoted in writing before any work begins.
-    </div>
-
-    <p class="nocontract">Month to month. No annual contract, no setup fee, cancel with 30 days notice.</p>
-
-    <div class="btnrow"><a class="btn" href="tel:+12056392604">Get my free books review</a></div>
-  </div>
-</section>
 
 <section>
   <div class="wrap">
-    <h2>What you get every month</h2>
-    <ul class="check">
-      <li>Every transaction categorized to the right account, consistently</li>
+    <div class="sec-head">
+      <p class="eyebrow">Pricing</p>
+      <h2>The prices, published</h2>
+      <p>Most bookkeepers make you get on a call before they will tell you a number. Here they are.
+        A flat monthly fee, set before the month starts.</p>
+    </div>
+
+    <div class="tiers">
+      <div class="tier">
+        <span class="tag">Basic</span>
+        <h3>Up to 50 transactions</h3>
+        <p>One bank account reconciled, categorization, and your monthly reports.</p>
+        <div class="amt">$250</div>
+        <div class="per">per month</div>
+      </div>
+      <div class="tier feature">
+        <span class="tag">Most common</span>
+        <h3>Up to 150 transactions</h3>
+        <p>Multiple accounts reconciled, plus accounts payable and receivable tracking.</p>
+        <div class="amt">$400</div>
+        <div class="per">per month</div>
+      </div>
+      <div class="tier">
+        <span class="tag">Plus</span>
+        <h3>150+ transactions</h3>
+        <p>Multiple accounts, higher volume, and a monthly review call with me.</p>
+        <div class="amt">$600</div>
+        <div class="per">per month</div>
+      </div>
+    </div>
+
+    <div class="extras">
+      <div class="extra">
+        <div>
+          <h3>Books behind or out of balance?</h3>
+          <p>Cleanup and catch-up, quoted in writing first.</p>
+        </div>
+        <div class="amt">$75<span style="font-size:.9rem;font-family:Inter,sans-serif;color:var(--muted)">/hr</span></div>
+      </div>
+      <div class="extra">
+        <div>
+          <h3>Starting from scratch?</h3>
+          <p>QuickBooks Online set up properly the first time.</p>
+        </div>
+        <div class="amt">$300</div>
+      </div>
+    </div>
+
+    <p class="fineprint">Month to month. No annual contract, no setup fee, cancel with 30 days notice.</p>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">The work</p>
+      <h2>What lands in your inbox every month</h2>
+    </div>
+    <ul class="gets">
+      <li>Every transaction categorized to the right account, the same way each month</li>
       <li>Bank and credit card accounts reconciled to your statements, so the balance sheet is real</li>
       <li>Profit and Loss and Balance Sheet delivered by the 15th</li>
       <li>A short plain-English summary of what changed and what deserves your attention</li>
       <li>Books your CPA can file from without sending questions back</li>
-      <li>Questions batched into one message, not a steady trickle all month</li>
+      <li>My questions batched into one message, not a trickle all month</li>
     </ul>
-  </div>
-</section>
-
-<section class="tint">
-  <div class="wrap">
-    <h2>How working together starts</h2>
-    <ol class="steps">
-      <li><strong>Free 20-minute books review</strong>We talk about your business and what is actually going wrong. You get a straight answer on what your books need and what it would cost, whether you hire me or not.</li>
-      <li><strong>Written scope and flat price</strong>You get an engagement letter with the work and the price spelled out before anything starts.</li>
-      <li><strong>Accountant access, never your password</strong>You invite me as an accountant user inside QuickBooks Online. I never touch your bank login, and you can remove my access in two clicks.</li>
-      <li><strong>First close</strong>I bring the books current, reconcile every account to the statements, and send your first set of reports.</li>
-    </ol>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <h2>Questions people actually ask</h2>
+    <div class="sec-head">
+      <p class="eyebrow">Getting started</p>
+      <h2>Four steps, and none of them are painful</h2>
+    </div>
+    <ol class="steps">
+      <li>
+        <div>
+          <strong>Free 20-minute books review</strong>
+          <p>We talk about your business and what is actually going wrong. You get a straight answer on
+            what your books need and what it would cost, whether you hire me or not.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <strong>Written scope and a flat price</strong>
+          <p>An engagement letter with the work and the price spelled out, before anything starts.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <strong>Accountant access, never your password</strong>
+          <p>You invite me as an accountant user inside QuickBooks Online. I never touch your bank login,
+            and you can remove my access in two clicks.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <strong>Your first close</strong>
+          <p>I bring the books current, reconcile every account to the statements, and send your first
+            set of reports.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Straight answers</p>
+      <h2>Questions people actually ask</h2>
+    </div>
     <div class="faq">
       <details open>
         <summary>My books are a mess and I am embarrassed about it</summary>
-        <p>Books that are behind or out of balance are exactly what the cleanup service is for. I do not need
-          your books to be good before I start. I need your QuickBooks file and your statements. Nobody is
-          judging the shoebox.</p>
+        <p>Books that are behind or out of balance are exactly what the cleanup service is for. I do not
+          need your books to be good before I start. I need your QuickBooks file and your statements.
+          Nobody is judging the shoebox.</p>
       </details>
       <details>
         <summary>Do you get access to my bank accounts?</summary>
@@ -302,8 +261,8 @@ footer a{color:#71809a}
       </details>
       <details>
         <summary>Can you do my taxes?</summary>
-        <p>No. I am a bookkeeper, not a CPA, so I do not prepare or file tax returns. What I do is hand your
-          tax preparer clean, reconciled books so the filing is quick and cheap.</p>
+        <p>No. I am a bookkeeper, not a CPA, so I do not prepare or file tax returns. What I do is hand
+          your tax preparer clean, reconciled books so the filing is quick and cheap.</p>
       </details>
       <details>
         <summary>What if I already have a CPA?</summary>
@@ -319,66 +278,88 @@ footer a{color:#71809a}
   </div>
 </section>
 
-<section class="about tint">
+<section>
   <div class="wrap">
-    <h2>About Sam Johnson</h2>
-    <div class="row">
-      <!-- Replace JIG-logo-square.png with a real headshot (sam-headshot.jpg) once available.
-           Research: for a solo practitioner selling access to financial data, a real face
+    <div class="sec-head">
+      <p class="eyebrow">Who you are hiring</p>
+      <h2>About Sam Johnson</h2>
+    </div>
+    <div class="about-grid">
+      <!-- Replace JIG-logo-square.png with a real headshot (sam-headshot.jpg).
+           For a solo practitioner selling access to financial data, a real face
            materially improves trust. Do not use stock photography. -->
-      <img src="JIG-logo-square.png" width="200" height="200" alt="Johnson Innovation Group LLC">
+      <div class="portrait">
+        <img src="JIG-logo-square.png" width="280" height="280" alt="Johnson Innovation Group LLC">
+        <div class="cap">Sierra Madre, California</div>
+      </div>
       <div>
-        <p>I hold four Intuit certifications: Intuit Bookkeeping, QuickBooks Online Level 1,
-          QuickBooks Online Level 2, and Intuit Enterprise Suite. I run Johnson Innovation Group
-          out of Sierra Madre, California.</p>
-        <p>I played football at USC and with the Raiders. That taught me something that applies directly to
-          bookkeeping: consistency beats talent. Books do not get messy because the work is hard. They get
-          messy because nobody does it the same way every month. I do.</p>
-        <p>I am a bookkeeper, not a CPA, so I do not prepare or file tax returns. What I do is hand your tax
-          preparer a clean, reconciled set of books and work with them directly so nothing gets lost between us.</p>
-        <p><a href="https://www.credly.com/users/sam-johnson.27a7d453" target="_blank" rel="noopener">Verify my certifications on Credly</a></p>
+        <p>I hold four Intuit certifications: Intuit Bookkeeping, QuickBooks Online Level 1, QuickBooks
+          Online Level 2, and Intuit Enterprise Suite. I run Johnson Innovation Group out of Sierra Madre.</p>
+        <blockquote class="pullquote">Books do not get messy because the work is hard. They get messy
+          because nobody does it the same way every month.</blockquote>
+        <p>I played football at USC and with the Raiders, which taught me something that applies directly
+          to this work: consistency beats talent. I do it the same way every month.</p>
+        <p>I am a bookkeeper, not a CPA, so I do not prepare or file tax returns. What I do is hand your
+          tax preparer a clean, reconciled set of books and work with them directly so nothing gets lost
+          between us.</p>
+        <p><a class="verify" href="https://www.credly.com/users/sam-johnson.27a7d453" target="_blank" rel="noopener">Verify my certifications on Credly &rarr;</a></p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="cities">
+<section class="alt">
   <div class="wrap">
-    <h2>Bookkeeping for small businesses in Pasadena and the San Gabriel Valley</h2>
-    <p><strong>Sierra Madre and Arcadia.</strong> This is home. I can sit down with you in person, go through
-      your QuickBooks file on one screen, and show you what is actually wrong with it.</p>
-    <p><strong>Pasadena, Altadena and Monrovia.</strong> Professional services firms, contractors, restaurants
-      and retail shops. If you invoice clients and pay vendors, the work is the same, and I know the local CPAs
-      your return will land with.</p>
-    <p><strong>Duarte, San Gabriel, Temple City, and the rest of California.</strong> Everything runs through
-      QuickBooks Online, so distance changes nothing. Remote clients get the same reports on the same schedule.</p>
-    <p><strong>Hours:</strong> Monday to Friday, 9:00 AM to 5:00 PM</p>
+    <div class="sec-head">
+      <p class="eyebrow">Service area</p>
+      <h2>Bookkeeping in Pasadena and the San Gabriel Valley</h2>
+    </div>
+    <div class="cities-grid">
+      <div class="city">
+        <h3>Sierra Madre and Arcadia</h3>
+        <p>This is home. I can sit down with you in person, open your QuickBooks file on one screen, and
+          show you what is actually wrong with it.</p>
+      </div>
+      <div class="city">
+        <h3>Pasadena, Altadena, Monrovia</h3>
+        <p>Professional services firms, contractors, restaurants and retail shops. If you invoice clients
+          and pay vendors, the work is the same, and I know the local CPAs your return lands with.</p>
+      </div>
+      <div class="city">
+        <h3>Duarte, San Gabriel, Temple City and beyond</h3>
+        <p>Everything runs through QuickBooks Online, so distance changes nothing. Remote clients across
+          California get the same reports on the same schedule.</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<div class="cta">
-  <div class="wrap">
+<div class="final">
+  <div class="wrap narrow">
     <h2>Find out what your books actually need</h2>
     <p>Twenty minutes, free, and you get a straight answer either way.</p>
     <div class="btnrow">
       <a class="btn" href="tel:+12056392604">Call (205) 639-2604</a>
-      <a class="btn alt" href="sms:+12056392604?&body=Hi%20Sam,%20I%20need%20help%20with%20my%20books." style="background:transparent;color:#fff;border-color:#fff">Text me</a>
+      <a class="btn ghost" href="sms:+12056392604?&body=Hi%20Sam,%20I%20need%20help%20with%20my%20books.">Text me</a>
     </div>
-    <p class="fine">Prefer to write it down? <a href="https://forms.gle/CuMHZsTyQNT7ib9T6" target="_blank" rel="noopener">Send me your details</a>
+    <p class="fine">Prefer to write it down?
+      <a href="https://forms.gle/CuMHZsTyQNT7ib9T6" target="_blank" rel="noopener">Send me your details</a>
       or email <a href="mailto:samjohnson8580@gmail.com?subject=Free%20books%20review">samjohnson8580@gmail.com</a>.
-      I will only use it to reply to you, and I do not sell or share anything you send.</p>
+      I only use it to reply to you.</p>
   </div>
 </div>
 
-<footer>
+<footer class="site-foot">
   <div class="wrap">
-    Johnson Innovation Group LLC &middot; Sierra Madre, California &middot;
-    <a href="tel:+12056392604">(205) 639-2604</a> &middot;
-    <a href="mailto:samjohnson8580@gmail.com">samjohnson8580@gmail.com</a>
-    <br><br>
-    Johnson Innovation Group LLC is a bookkeeping firm. It is not a CPA firm and does not provide tax,
-    audit, attest, or legal services.
-    <br><br>
+    <div>
+      <a href="tel:+12056392604">(205) 639-2604</a> &nbsp;&middot;&nbsp;
+      <a href="mailto:samjohnson8580@gmail.com">samjohnson8580@gmail.com</a><br>
+      Johnson Innovation Group LLC &middot; Sierra Madre, California &middot; Mon to Fri, 9 to 5 PT
+    </div>
+    <div class="disc">
+      Johnson Innovation Group LLC is a bookkeeping firm. It is not a CPA firm and does not provide tax,
+      audit, attest, or legal services.
+    </div>
   </div>
 </footer>
 
